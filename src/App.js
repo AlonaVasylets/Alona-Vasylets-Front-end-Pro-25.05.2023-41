@@ -18,9 +18,8 @@ function App() {
     resolver: yupResolver(schema),
   });
 
-  const onSubmit = (data) => {
-    const newData = {...data};
-    newData.name = newData.name.replace(/\s+/g, ' ').trim();
+ const onSubmit = (data) => {
+    const newData = {...data, name: data.name.replace(/\s+/g, ' ').trim()};
     console.log(newData);
     reset();
   }
